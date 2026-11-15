@@ -21,6 +21,66 @@ It analyzes student resumes, recommends suitable career paths, generates persona
 - **Skill Tracker:** Add skills manually and monitor learning progress.
 - **Dashboard:** View career plans, resumes, applications, and skill progress in one place.
 
+
+## 📸 Application Screenshots
+
+### 1. Login Page
+![Login](screenshots/login.png)
+
+### 2. Dashboard
+![Dashboard](screenshots/dashboard.png)
+
+### 3. Resume Analysis
+![Resume Analysis](screenshots/resume%20analysis.png)
+
+### 4. AI Career Plan Generator
+![Career Plan](screenshots/career-plan.png)
+
+### 5. Internship Application Tracker
+![Internship Application](screenshots/internship-application.png)
+
+
+## 🏗️ System Architecture
+
+```mermaid
+flowchart TD
+    A[Student / User] --> B[React Frontend]
+
+    B --> C[FastAPI Backend]
+
+    C --> D[Authentication - JWT]
+    C --> E[Resume Analysis]
+    C --> F[Skill Gap Analysis]
+    C --> G[AI Career Plan Generator]
+    C --> H[Internship Application Tracker]
+    C --> I[Dashboard APIs]
+
+    E --> J[Resume Parser]
+    J --> K[Skill Extractor]
+
+    F --> L[Skill Gap Service]
+
+    G --> M[Google Gemini AI]
+
+    D --> N[(MySQL Database)]
+    E --> N
+    F --> N
+    G --> N
+    H --> N
+    I --> N
+```
+
+## 🛠️ Technology Stack
+
+| Category | Technologies |
+|---|---|
+| Frontend | React.js, JavaScript |
+| Backend | Python, FastAPI |
+| Database | MySQL |
+| AI Integration | Google Gemini API |
+| Authentication | JWT |
+| Tools | VS Code, Git, GitHub |
+
 ## 🛠️ Technologies Used
 
 ### Frontend
@@ -101,7 +161,7 @@ python -m venv venv
 Windows:
 
 ```bash
-venv\Scripts\activate
+.\venv\Scripts\Activate.ps1
 ```
 
 Install dependencies:
@@ -117,7 +177,7 @@ Create and configure the MySQL database before starting the backend.
 Start the backend:
 
 ```bash
-uvicorn backend.main:app --reload
+python -m uvicorn backend.main:app --reload
 ```
 
 Backend API:
