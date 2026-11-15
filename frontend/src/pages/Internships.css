@@ -1,0 +1,244 @@
+
+.internship-page {
+    min-height: 100vh;
+    padding: 35px;
+    background: #0b1120;
+    color: #f1f5f9;
+    font-family: Arial, sans-serif;
+}
+
+.internship-header {
+    margin-bottom: 30px;
+}
+
+.internship-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: #a78bfa;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+}
+
+.internship-header h1 {
+    color: white;
+    font-size: 32px;
+    margin: 0 0 10px;
+}
+
+.internship-header p {
+    color: #94a3b8;
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.internship-main-grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 22px;
+}
+
+.internship-form-card,
+.internship-info-card {
+    background: #151e30;
+    border: 1px solid #26334a;
+    border-radius: 16px;
+    padding: 26px;
+}
+
+.internship-card-heading {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 25px;
+}
+
+.internship-heading-icon,
+.internship-info-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: #30265b;
+    color: #a78bfa;
+}
+
+.internship-card-heading h2,
+.internship-info-card h2 {
+    color: white;
+    font-size: 19px;
+    margin: 0 0 6px;
+}
+
+.internship-card-heading p {
+    color: #94a3b8;
+    font-size: 13px;
+    margin: 0;
+}
+
+.internship-form-card label {
+    display: block;
+    color: #e2e8f0;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 22px 0 10px;
+}
+
+.internship-input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 14px;
+    background: #101a2b;
+    border: 1px solid #35445e;
+    border-radius: 10px;
+    color: #a78bfa;
+    transition: 0.2s;
+}
+
+.internship-input-wrapper:focus-within {
+    border-color: #8b5cf6;
+    box-shadow: 0 0 0 3px #8b5cf622;
+}
+
+.internship-input-wrapper input {
+    width: 100%;
+    padding: 14px 0;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+.internship-input-wrapper input::placeholder {
+    color: #64748b;
+}
+
+.internship-submit-btn {
+    width: 100%;
+    margin-top: 25px;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(110deg, #6366f1, #9333ea);
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+    transition: 0.25s;
+}
+
+.internship-submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 22px #6366f144;
+}
+
+.internship-submit-btn:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.internship-message {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 12px;
+    margin-top: 18px;
+    border-radius: 9px;
+    font-size: 13px;
+}
+
+.internship-message.success {
+    color: #86efac;
+    background: #123528;
+}
+
+.internship-message.error {
+    color: #fca5a5;
+    background: #401f2a;
+}
+
+.internship-info-icon {
+    margin-bottom: 18px;
+}
+
+.internship-info-card > p {
+    color: #94a3b8;
+    font-size: 13px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.internship-info-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-top: 21px;
+}
+
+.internship-info-step > span {
+    min-width: 37px;
+    height: 37px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #30265b;
+    color: #c4b5fd;
+    border-radius: 9px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.internship-info-step strong {
+    color: #e2e8f0;
+    font-size: 14px;
+}
+
+.internship-info-step p {
+    color: #94a3b8;
+    font-size: 12px;
+    margin: 6px 0 0;
+}
+
+.internship-spin {
+    animation: internship-spin 1s linear infinite;
+}
+
+@keyframes internship-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 850px) {
+    .internship-main-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .internship-page {
+        padding: 20px 14px;
+    }
+
+    .internship-header h1 {
+        font-size: 26px;
+    }
+
+    .internship-form-card,
+    .internship-info-card {
+        padding: 18px;
+    }
+}

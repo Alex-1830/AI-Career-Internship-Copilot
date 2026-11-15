@@ -6,9 +6,9 @@ An AI-powered career assistant designed to help students analyze their resumes, 
 
 Students often struggle to identify suitable career paths, understand the skills required by companies, and find relevant internship opportunities.
 
-**AI Career & Internship Copilot** addresses these challenges using Artificial Intelligence and a centralized career management platform.
+**AI Career & Internship Copilot** addresses these challenges using Artificial Intelligence, Machine Learning, and a centralized career management platform.
 
-It analyzes student resumes, recommends suitable career paths, generates personalized learning plans, and helps students track their internship applications and skill development.
+It analyzes student resumes, recommends suitable career paths, generates personalized learning plans, predicts suitable internship roles using Machine Learning, and helps students track internship applications and skill development.
 
 ## ✨ Key Features
 
@@ -17,10 +17,53 @@ It analyzes student resumes, recommends suitable career paths, generates persona
 - **AI Career Planner:** Generate personalized career recommendations and learning roadmaps.
 - **Skill Gap Analysis:** Identify skills that need improvement.
 - **Project Recommendations:** Suggest projects based on career goals and skills.
+- **ML Internship Role Predictor:** Predict suitable internship categories based on student skills using Logistic Regression.
 - **Internship Tracker:** Add and manage internship applications.
 - **Skill Tracker:** Add skills manually and monitor learning progress.
 - **Dashboard:** View career plans, resumes, applications, and skill progress in one place.
 
+## 🤖 Machine Learning Implementation
+
+The project includes a supervised Machine Learning model that predicts suitable internship roles based on student skills.
+
+**Machine Learning workflow:**
+
+1. Collect student skills as text input.
+2. Convert text into numerical features using TF-IDF Vectorization.
+3. Train a Logistic Regression classification model.
+4. Predict the most suitable internship category.
+5. Display the predicted role in the React frontend.
+
+**Algorithms and Libraries:**
+
+- TF-IDF Vectorizer
+- Logistic Regression
+- Scikit-learn
+- Matplotlib
+
+**Supported internship categories:**
+
+- AI/ML Intern
+- Frontend Developer Intern
+- Backend Developer Intern
+- Data Analyst Intern
+
+### Model Evaluation
+
+The model was evaluated using an 80? No: 75% training and 25% testing split of the 32-example dataset.
+
+| Evaluation Metric | Result |
+|---|---:|
+| Accuracy | 87.5% |
+| Macro Precision | 92% |
+| Macro Recall | 88% |
+| Macro F1-score | 87% |
+
+**Confusion Matrix**
+
+![Internship Role Prediction Confusion Matrix](internship_confusion_matrix.png)
+
+**Note:** The current training dataset contains 32 synthetic examples, and the test set contains only 8 examples. These results are preliminary and should not be interpreted as real-world model performance.
 
 ## 📸 Application Screenshots
 
@@ -39,7 +82,6 @@ It analyzes student resumes, recommends suitable career paths, generates persona
 ### 5. Internship Application Tracker
 ![Internship Application](screenshots/internship-application.png)
 
-
 ## 🏗️ System Architecture
 
 ```mermaid
@@ -53,65 +95,39 @@ flowchart TD
     C --> F[Skill Gap Analysis]
     C --> G[AI Career Plan Generator]
     C --> H[Internship Application Tracker]
-    C --> I[Dashboard APIs]
+    C --> I[ML Internship Role Predictor]
+    C --> J[Dashboard APIs]
 
-    E --> J[Resume Parser]
-    J --> K[Skill Extractor]
+    E --> K[Resume Parser]
+    K --> L[Skill Extractor]
 
-    F --> L[Skill Gap Service]
+    F --> M[Skill Gap Service]
 
-    G --> M[Google Gemini AI]
+    G --> N[Google Gemini AI]
 
-    D --> N[(MySQL Database)]
-    E --> N
-    F --> N
-    G --> N
-    H --> N
-    I --> N
+    I --> O[TF-IDF Vectorizer]
+    O --> P[Logistic Regression]
+
+    D --> Q[(MySQL Database)]
+    E --> Q
+    F --> Q
+    G --> Q
+    H --> Q
+    J --> Q
 ```
 
 ## 🛠️ Technology Stack
 
 | Category | Technologies |
 |---|---|
-| Frontend | React.js, JavaScript |
-| Backend | Python, FastAPI |
+| Frontend | React.js, JavaScript, HTML, CSS |
+| Backend | Python, FastAPI, REST APIs |
 | Database | MySQL |
 | AI Integration | Google Gemini API |
+| Machine Learning | Scikit-learn, TF-IDF, Logistic Regression |
+| Data Visualization | Matplotlib |
 | Authentication | JWT |
-| Tools | VS Code, Git, GitHub |
-
-## 🛠️ Technologies Used
-
-### Frontend
-- React.js
-- JavaScript
-- HTML
-- CSS
-- Axios
-- Vite
-
-### Backend
-- Python
-- FastAPI
-- REST APIs
-- JWT Authentication
-
-### Database
-- MySQL
-
-### AI Integration
-- Google Gemini API
-- Python-based skill extraction and analysis
-
-## 🏗️ System Architecture
-
-The application follows a frontend-backend-database architecture.
-
-1. **Frontend:** React provides the user interface.
-2. **Backend:** FastAPI handles authentication, business logic, and API requests.
-3. **AI Services:** Gemini integration supports career planning and recommendations.
-4. **Database:** MySQL stores user information, resumes, career plans, internship applications, and skill progress.
+| Tools | VS Code, Git, GitHub, Vite |
 
 ## 📂 Project Structure
 
@@ -122,6 +138,8 @@ AI-Career-Internship-Copilot/
 │   ├── agents/
 │   ├── database/
 │   ├── services/
+│   │   ├── internship_predictor.py
+│   │   └── evaluate_internship_model.py
 │   ├── main.py
 │   └── requirements.txt
 │
@@ -134,6 +152,8 @@ AI-Career-Internship-Copilot/
 │   │   └── main.jsx
 │   └── package.json
 │
+├── screenshots/
+├── internship_confusion_matrix.png
 ├── .gitignore
 └── README.md
 ```
@@ -152,15 +172,15 @@ cd AI-Career-Internship-Copilot
 
 ### 2. Backend Setup
 
-Create and activate a Python virtual environment:
+Create a Python virtual environment:
 
 ```bash
 python -m venv venv
 ```
 
-Windows:
+Activate it on Windows:
 
-```bash
+```powershell
 .\venv\Scripts\Activate.ps1
 ```
 
@@ -230,6 +250,7 @@ http://localhost:5173
 - Simplify career planning for students.
 - Improve resume quality and skill awareness.
 - Recommend personalized learning paths.
+- Predict suitable internship roles using Machine Learning.
 - Help students organize internship applications.
 - Encourage continuous skill development.
 
@@ -241,26 +262,17 @@ AI Career & Internship Copilot
 
 GitHub: https://github.com/Alex-1830
 
-## 📌 Future Enhancements
+## 🚀 Future Enhancements
 
 - Real-time internship recommendations.
-- Automated resume scoring.
+- Automated resume scoring and improvement suggestions.
 - Job description and resume matching.
 - Personalized AI career chatbot.
 - Email notifications for internship opportunities.
+- Advanced career analytics and progress tracking.
+- Integration with LinkedIn for career opportunities.
+- AI-powered interview preparation and practice.
 
 ---
 
 ⭐ If you find this project interesting, feel free to explore the repository!
-
-
-
-## 🚀 Future Enhancements
-
-- AI-powered internship recommendations based on student skills.
-- Automated resume scoring and improvement suggestions.
-- Real-time internship opportunity integration.
-- Email notifications for internship updates.
-- Advanced career analytics and progress tracking.
-- Integration with LinkedIn for career opportunities.
-- AI-powered interview preparation and practice.

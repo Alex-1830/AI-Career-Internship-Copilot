@@ -6,6 +6,7 @@ from backend.services.resume_parser import extract_resume_text
 from backend.services.skill_extractor import extract_skills
 from backend.services.skill_gap import analyze_skill_gap
 from backend.services.internship_recommender import recommend_internships
+from backend.services.internship_predictor import predict_internship_role
 from backend.services.career_roadmap import generate_career_roadmap
 from backend.services.gemini_service import ask_gemini
 from backend.agents.career_analyst_agent import analyze_career_paths
@@ -530,4 +531,27 @@ async def read_user_skills(
 
     return {
         "skills": skills
+    }
+
+
+@app.post("/internships/predict-role")
+async def predict_role(
+    skills: str = Form(...),
+    current_user_id: int = Depends(get_current_user)
+):
+    student_skills = skills.strip()
+
+    if not student_skills:
+        raise HTTPException(
+            status_code=400,
+            detail="Please enter your skills"
+        )
+
+    predicted_role = predict_internship_role(student_skills)
+
+    return {
+        "user_id": current_user_id,
+        "student_skills": student_skills,
+        "predicted_internship_role": predicted_role,
+        "message": "Internship role predicted successfully"
     }
