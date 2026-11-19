@@ -241,4 +241,30 @@
     .internship-info-card {
         padding: 18px;
     }
+        .internship-header h1 {
+        line-height: 1.3;
+    }
+
+    .internship-header p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .internship-form-card,
+    .internship-info-card {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .internship-form-card button {
+        width: 100%;
+    }
+
+    .internship-page input,
+    .internship-page select,
+    .internship-page textarea {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
 }

@@ -12,7 +12,7 @@ function MyApplications() {
                 const token = localStorage.getItem("access_token");
 
                 const response = await axios.get(
-                    "http://127.0.0.1:8000/dashboard/internships",
+                    "/api/dashboard/internships",
                     {
                         headers: {
                             Authorization: `Bearer ${token}`

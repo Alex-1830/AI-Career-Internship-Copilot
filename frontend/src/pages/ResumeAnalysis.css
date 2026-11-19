@@ -365,4 +365,27 @@
     .resume-result-details {
         grid-template-columns: 1fr;
     }
+        .resume-header p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .resume-header h1 {
+        line-height: 1.3;
+    }
+
+    .resume-upload-card,
+    .resume-info-card,
+    .resume-results {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .resume-upload-card button {
+        width: 100%;
+    }
+
+    .resume-results {
+        overflow-wrap: anywhere;
+    }
 }

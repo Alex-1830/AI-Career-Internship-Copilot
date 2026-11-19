@@ -6,12 +6,17 @@ import CareerPlan from "./pages/CareerPlan";
 import Internships from "./pages/Internships";
 import MyApplications from "./pages/MyApplications";
 import ProtectedRoute from "./ProtectedRoute";
+import Signup from "./pages/Signup";
 
 function App() {
     return (
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Login />} />
+
+<Route path="/login" element={<Login />} />
+
+<Route path="/signup" element={<Signup />} />
                 <Route
     path="/dashboard"
     element={

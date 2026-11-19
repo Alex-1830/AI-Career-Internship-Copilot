@@ -38,7 +38,7 @@ function CareerPlan() {
             const token = localStorage.getItem("access_token");
 
             const response = await axios.post(
-                "http://127.0.0.1:8000/agents/full-career-plan",
+                "/api/agents/full-career-plan",
                 formData,
                 {
                     headers: {

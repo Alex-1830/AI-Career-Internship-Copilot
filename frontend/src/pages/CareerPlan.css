@@ -303,4 +303,33 @@
     .career-result-grid {
         grid-template-columns: 1fr;
     }
+        .career-header h1 {
+        line-height: 1.3;
+    }
+
+    .career-header p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .career-form-card,
+    .career-info-card,
+    .career-results {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .career-generate-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .career-result-card {
+        min-width: 0;
+        overflow-wrap: anywhere;
+    }
+
+    .career-result-card ul {
+        padding-left: 20px;
+    }
 }

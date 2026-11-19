@@ -22,7 +22,7 @@ import {
 
 import "./Dashboard.css";
 
-const API_URL = "http://127.0.0.1:8000";
+const API_URL = "/api";
 
 function Dashboard() {
     const navigate = useNavigate();

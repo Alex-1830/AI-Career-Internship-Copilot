@@ -1,4 +1,33 @@
+
+# Python virtual environments
 venv/
+.venv/
+env/
+
+# Environment variables and secrets
 .env
+.env.*
+!.env.example
+
+# Python cache files
 __pycache__/
-*.pyc
+*.py[cod]
+
+# Node.js dependencies
+node_modules/
+
+# Build files
+dist/
+build/
+
+# IDE and editor files
+.vscode/
+.idea/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+# Temporary testing files
+test_db.py
+test_db_operations.py
+testgemini.py

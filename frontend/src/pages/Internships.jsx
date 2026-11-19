@@ -40,7 +40,7 @@ function Internships() {
             const token = localStorage.getItem("access_token");
 
             const response = await axios.post(
-                "http://127.0.0.1:8000/internships/apply",
+                "/api/internships/apply",
                 formData,
                 {
                     headers: {
@@ -83,7 +83,7 @@ function Internships() {
             const token = localStorage.getItem("access_token");
 
             const response = await axios.post(
-                "http://127.0.0.1:8000/internships/predict-role",
+                "/api/internships/predict-role",
                 formData,
                 {
                     headers: {
